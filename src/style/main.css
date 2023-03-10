@@ -1,0 +1,89 @@
+@import 'https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Roboto:wght@400;700&display=swap';
+:root {
+  font-size: 62.5%;
+  --font-title-sm: 700 34px 'Comic Neue', serif;
+  --font-title-lg: 700 46px 'Comic Neue', serif;
+  --font-list: 700 16px 'Roboto', sans-serif;
+  --font-add-task: 400 17px 'Roboto', sans-serif;
+  --add-task-font-color: rgba(61, 70, 74, 0.5);
+  --bg-color: #e2e7e9;
+  --bg-card-color: #faf7eb;
+  --bl-color: #15181a;
+  --gr-color: #3c4549;
+  --pr-color: #0da6f2;
+  --sc-color: #d7263d;
+
+  --border-radius: 0.4rem;
+  --box-shadow: 0 0 0.2rem 0 rgba(0, 0, 0, 0.2);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  background-color: var(--bg-color);
+}
+header h1 {
+  font: var(--font-title-sm);
+  text-align: center;
+  margin: 2rem 0 4rem;
+}
+main {
+  position: relative;
+  max-width: 60rem;
+  min-height: 40rem;
+  width: 90%;
+  background-color: var(--bg-card-color);
+  margin: auto;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+#app {
+  padding: 2rem 1.5rem 4rem;
+  font: var(--font-list);
+}
+#app:first-letter {
+  text-transform: uppercase;
+}
+
+main::after {
+  content: '';
+  position: absolute;
+  bottom: 2rem;
+  height: 0.2rem;
+  background-color: var(--sc-color);
+  width: calc(100% - 1.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+}
+.tasks {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 1rem;
+}
+.tasks i {
+  color: var(--pr-color);
+  cursor: pointer;
+  font-size: 2.6rem;
+}
+#add-task {
+  font: var(--font-add-task);
+}
+#add-task input[type='text'] {
+  font: var(--font-list);
+  background-color: var(--bg-card-color);
+  border: none;
+  width: 1000%;
+}
+#add-task input[type='text']:focus {
+  outline: none;
+}
+#add-task input[type='text']::placeholder {
+  color: var(--add-task-font-color);
+}
